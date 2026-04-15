@@ -56,7 +56,7 @@ export const userAPI = {
   getProfile: () => api.get('/users/profile'),
 };
 
+const API_URL = "https://your-backend.onrender.com";
 export default api;
-const API_URL = "https://food-web-backend-qul6.onrender.com";
 
 
