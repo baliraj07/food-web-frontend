@@ -1,10 +1,17 @@
 import axios from 'axios';
 
-const API_BASE = process.env.REACT_APP_API_BASE || 'https://food-web-backend-qul6.onrender.com'; // fallback only for local
+// For Vite, use import.meta.env, not process.env
+const API_BASE = import.meta.env.VITE_API_BASE;
+
+if (!API_BASE) {
+  console.error('VITE_API_BASE environment variable is not set!');
+}
 
 const api = axios.create({
   baseURL: API_BASE,
 });
+
+// ... rest of your code (interceptors, etc.) stays the same
 
 
 api.interceptors.request.use((config) => {
