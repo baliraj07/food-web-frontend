@@ -10,7 +10,7 @@ const RestaurantCard = ({ restaurant }) => {
         <div className="flex items-center justify-between mb-2">
           <h3 className="text-xl font-bold text-gray-900">{restaurant.name}</h3>
           <div className="flex items-center bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
-            ★ {restaurant.rating.toFixed(1)}
+★ {restaurant.rating ? restaurant.rating.toFixed(1) : 'N/A'}
           </div>
         </div>
         <div className="flex flex-wrap gap-2 mb-3">
@@ -18,7 +18,7 @@ const RestaurantCard = ({ restaurant }) => {
             {restaurant.cuisine}
           </span>
           <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
-            ₹ {restaurant.avgPrice ? restaurant.avgPrice.toFixed(0) : 'N/A'}
+₹ {restaurant.avgPrice ? restaurant.avgPrice.toFixed(0) : 'N/A'}
           </span>
           {restaurant.locationString && (
             <span className="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">
